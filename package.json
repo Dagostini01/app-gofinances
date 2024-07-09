@@ -1,7 +1,7 @@
 {
   "name": "app-gofinances",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "start": "expo start --dev-client",
     "android": "expo run:android",
@@ -13,6 +13,7 @@
     "@types/react": "^18.3.3",
     "@types/react-native": "^0.73.0",
     "expo": "~51.0.18",
+    "expo-app-loading": "^2.1.1",
     "expo-font": "^12.0.7",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
