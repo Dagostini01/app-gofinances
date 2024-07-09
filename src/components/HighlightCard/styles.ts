@@ -4,10 +4,11 @@ import { Feather } from "@expo/vector-icons";
 
 export const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.shape};
-  width: ${RFValue(300)}px;
+  width: ${RFValue(270)}px;
   border-radius: 5px;
   padding: 19px 23px;
   padding-bottom: ${RFValue(42)}px;
+  margin-right: 16px;
 `;
 
 export const Header = styled.View`
