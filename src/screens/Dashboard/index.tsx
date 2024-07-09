@@ -9,13 +9,15 @@ import {
   UserGreeting,
   UserName,
   Icon,
+  HighlightCards,
 } from './styles';
+import { HighlightCard } from '../../components/HighlightCard';
 
 export function Dashboard() {
   return (
     <Container>
-      <Header>
 
+      <Header>
         <UserWrapper>
           <UserInfo>
             <Photo source={{ uri: 'https://avatars.githubusercontent.com/u/87324617?v=4' }} />
@@ -26,8 +28,15 @@ export function Dashboard() {
           </UserInfo>
           <Icon name='power' />
         </UserWrapper>
-
       </Header>
+
+      <HighlightCards>
+        <HighlightCard />
+        <HighlightCard />
+        <HighlightCard />
+      </HighlightCards>
+
+
     </Container>
   )
 }
