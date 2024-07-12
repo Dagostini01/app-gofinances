@@ -10,7 +10,10 @@ import {
   UserName,
   Icon,
   HighlightCards,
+  Transactions,
+  Title,
 } from './styles';
+
 import { HighlightCard } from '../../components/HighlightCard';
 
 export function Dashboard() {
@@ -36,6 +39,9 @@ export function Dashboard() {
         <HighlightCard />
       </HighlightCards>
 
+      <Transactions>
+        <Title>Listagem</Title>
+      </Transactions>
 
     </Container>
   )
