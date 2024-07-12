@@ -13,7 +13,7 @@ export const Title = styled.Text`
   font-size: ${RFValue(14)}px;
 `;
 
-export const Amount = styled.View`
+export const Amount = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: ${RFValue(20)}px;
   margin-top: 2px;
