@@ -1,4 +1,5 @@
 import React from "react";
+import { IconName } from './icon';
 
 import {
     Container,
@@ -13,7 +14,7 @@ import {
 
 interface CategoryProps {
     name: string;
-    icon: string;
+    icon: IconName;
 }
 
 export interface TransactionCardProps {

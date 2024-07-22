@@ -1,4 +1,5 @@
 import React from 'react';
+import { FlatList } from 'react-native'; // Certifique-se de importar FlatList
 import { HighlightCard } from '../../components/HighlightCard';
 import { TransactionCard, TransactionCardProps } from '../../components/TransactionCard';
 import {
@@ -14,7 +15,7 @@ import {
   HighlightCards,
   Transactions,
   Title,
-  TransactionList,
+  TransactionList, // Certifique-se de que TransactionList seja um alias para FlatList
 } from './styles';
 
 export interface DataListProps extends TransactionCardProps {
@@ -43,7 +44,6 @@ export function Dashboard() {
       icon: "coffee"
     },
     date: '10/04/2022'
-
   },
   {
     id: '3',
@@ -55,12 +55,10 @@ export function Dashboard() {
       icon: "shopping-bag"
     },
     date: '27/03/2022'
-  }
-  ];
+  }];
 
   return (
     <Container>
-
       <Header>
         <UserWrapper>
           <UserInfo>
@@ -82,15 +80,13 @@ export function Dashboard() {
 
       <Transactions>
         <Title>Listagem</Title>
-        <TransactionList
+        <FlatList
           data={data}
           keyExtractor={item => item.id}
+          showsVerticalScrollIndicator={false}
           renderItem={({ item }) => <TransactionCard data={item} />}
         />
-
       </Transactions>
-
     </Container>
-  )
+  );
 }
-

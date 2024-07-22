@@ -85,11 +85,5 @@ export const Title = styled.Text`
   margin-bottom: 16px;
 `;
 
-export const TransactionList = styled(
-  FlatList as new () => FlatList<DataListProps>
-).attrs({
-  showVerticalScrollIndicator: false,
-  contentContainerStyle: {
-    paddingBottom: getBottomSpace()
-  }
-})``;
+export const TransactionList = styled(FlatList as new () => FlatList<DataListProps>)`
+`;
