@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList } from 'react-native'; // Certifique-se de importar FlatList
+import { FlatList } from 'react-native';
 import { HighlightCard } from '../../components/HighlightCard';
 import { TransactionCard, TransactionCardProps } from '../../components/TransactionCard';
 import {

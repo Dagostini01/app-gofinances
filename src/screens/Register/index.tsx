@@ -8,6 +8,7 @@ import {
 } from './styles';
 import { Input } from '../../components/Forms/Input';
 import { Button } from '../../components/Forms/Button';
+import { TransactionTypeButton } from '../../components/Forms/TransactionTypeButton';
 
 export function Register() {
   return (
@@ -22,6 +23,7 @@ export function Register() {
           <Input placeholder='Nome' />
           <Input placeholder='Preço' />
         </Fields>
+        <TransactionTypeButton type='arrow-up-circle' title='Income'/>
         <Button title='Enviar' />
       </Form>
 
