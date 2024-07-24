@@ -5,6 +5,7 @@ import {
   Title,
   Form,
   Fields,
+  TransactionTypes,
 } from './styles';
 import { Input } from '../../components/Forms/Input';
 import { Button } from '../../components/Forms/Button';
@@ -22,8 +23,11 @@ export function Register() {
         <Fields>
           <Input placeholder='Nome' />
           <Input placeholder='Preço' />
+          <TransactionTypes>
+            <TransactionTypeButton type='arrow-up-circle' title='Income' />
+            <TransactionTypeButton type='arrow-down-circle' title='Outcome' />
+          </TransactionTypes>
         </Fields>
-        <TransactionTypeButton type='arrow-up-circle' title='Income'/>
         <Button title='Enviar' />
       </Form>
 
