@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   Header,
@@ -10,8 +10,15 @@ import {
 import { Input } from '../../components/Forms/Input';
 import { Button } from '../../components/Forms/Button';
 import { TransactionTypeButton } from '../../components/Forms/TransactionTypeButton';
+import { CategorySelect } from '../../components/Forms/CategorySelect';
 
 export function Register() {
+
+  const [transactionType, setTransactionType] = useState('');
+  function handleTransactionsTypeSelect(type: 'arrow-up-circle' | 'arrow-down-circle') {
+    setTransactionType(type);
+  }
+
   return (
     <Container>
 
@@ -23,14 +30,26 @@ export function Register() {
         <Fields>
           <Input placeholder='Nome' />
           <Input placeholder='Preço' />
+
           <TransactionTypes>
-            <TransactionTypeButton type='arrow-up-circle' title='Income' />
-            <TransactionTypeButton type='arrow-down-circle' title='Outcome' />
+            <TransactionTypeButton
+              onPress={() => handleTransactionsTypeSelect('arrow-up-circle')}
+              type='arrow-up-circle'
+              title='Income'
+              isActive={transactionType == 'arrow-up-circle'}
+            />
+            <TransactionTypeButton
+              onPress={() => handleTransactionsTypeSelect('arrow-down-circle')} type='arrow-down-circle'
+              title='Outcome'
+              isActive={transactionType == 'arrow-down-circle'}
+            />
           </TransactionTypes>
+
+          <CategorySelect title='Categoria' icon='chevron-down'/>
+
         </Fields>
         <Button title='Enviar' />
       </Form>
-
     </Container>
   )
 }

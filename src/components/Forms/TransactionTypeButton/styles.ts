@@ -1,5 +1,5 @@
 import { TouchableOpacity } from "react-native";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import { Feather } from "@expo/vector-icons";
 import { RFValue } from "react-native-responsive-fontsize";
 
@@ -7,14 +7,33 @@ type IconProps = {
   type: "arrow-up-circle" | "arrow-down-circle";
 };
 
-export const Container = styled(TouchableOpacity)`
+type ContainerProps = {
+  isActive: boolean;
+  type: "arrow-up-circle" | "arrow-down-circle";
+};
+
+export const Container = styled(TouchableOpacity)<ContainerProps>`
   width: 48%;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid ${({ theme }) => theme.colors.text};
+  border-width: ${({ isActive }) => (isActive ? 0 : 1.5)}px;
+  border-style: solid;
+  border-color: ${({ theme }) => theme.colors.text};
   border-radius: 5px;
   padding: 16px;
+  ${({ isActive, type }) =>
+    isActive &&
+    type == "arrow-up-circle" &&
+    css`
+      background-color: ${({ theme }) => theme.colors.succes_light};
+    `}
+  ${({ isActive, type }) =>
+    isActive &&
+    type == "arrow-down-circle" &&
+    css`
+      background-color: ${({ theme }) => theme.colors.attention_light};
+    `}
 `;
 
 export const Icon = styled(Feather)<IconProps>`

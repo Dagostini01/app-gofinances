@@ -11,11 +11,12 @@ import {
 interface Props extends TouchableOpacityProps {
     type: IconName;
     title: string;
+    isActive: boolean;
 }
 
-export function TransactionTypeButton({title, type, ...rest}: Props){
+export function TransactionTypeButton({title, type, isActive, ...rest}: Props){
     return(
-        <Container {...rest}>
+        <Container {...rest} isActive={isActive} type={type}>
             <Icon name={type} type={type}/>
             <Title>
                 {title}
