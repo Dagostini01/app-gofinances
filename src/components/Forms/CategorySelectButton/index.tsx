@@ -11,7 +11,7 @@ interface Props {
     icon: IconName;
 }
 
-export function CategorySelect({title, icon}: Props){
+export function CategorySelectButton({title, icon}: Props){
     return(
         <Container>
             <Category>{title}</Category>
