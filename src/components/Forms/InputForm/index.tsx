@@ -4,27 +4,35 @@ import { Input } from "../Input";
 import { TextInputProps } from "react-native";
 import { Control, Controller } from "react-hook-form";
 
+// Defina o FormData se ainda não estiver importado
+interface FormData {
+  name: string;
+  amount: string;
+}
+
 interface Props extends TextInputProps {
-    control: Control;
-    name: string;
+  control: Control<FormData>;
+  name: keyof FormData;
 }
 
 export function InputForm({
-    control,
-    name,
-    ...rest
-} : Props) {
-    return (
-        <Container>
-            <Controller
-                control={control}
-                render={({ field: { onChange, onBlur, value } }) => (
-                    <Input
-                        {...rest}
-                    />
-                )}
-                name={name}
-            />
-        </Container>
-    );
+  control,
+  name,
+  ...rest
+}: Props) {
+  return (
+    <Container>
+      <Controller
+        control={control}
+        render={({ field: { onChange, value } }) => (
+          <Input
+            onChangeText={onChange}
+            value={value}
+            {...rest}
+          />
+        )}
+        name={name}
+      />
+    </Container>
+  );
 }
