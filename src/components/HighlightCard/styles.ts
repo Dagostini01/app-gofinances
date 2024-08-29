@@ -24,6 +24,7 @@ export const Title = styled.Text`
 
 export const Icon = styled(Feather)`
   font-size: ${RFValue(40)}px;
+  color: ${({ theme }) => theme.colors.succes};
 `;
 
 export const Footer = styled.View``;
